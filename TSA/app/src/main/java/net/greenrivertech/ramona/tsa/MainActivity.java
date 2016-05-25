@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Random randomNumber = new Random();
-       int buttonTap = randomNumber.nextInt(2) + 1;
-
+        int buttonTap = randomNumber.nextInt(2) + 1;
 
         if (buttonTap == 1) {
             ImageView arrowRight = (ImageView) findViewById(R.id.imageViewRight);
@@ -42,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
             ImageView arrowLeft = (ImageView) findViewById(R.id.imageViewLeft);
             arrowLeft.setVisibility(View.VISIBLE);
         }
-
-
-
     }
 
     @Override

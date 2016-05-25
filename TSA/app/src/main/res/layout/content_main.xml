@@ -12,7 +12,6 @@
     tools:context="net.greenrivertech.ramona.tsa.MainActivity"
     tools:showIn="@layout/activity_main">
 
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +33,7 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/arrow_right"
         android:visibility="gone"
-        />
+        android:contentDescription="@string/arrow_points_right" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -44,6 +43,6 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/arrow_left"
         android:visibility="gone"
-        />
+        android:contentDescription="@string/arrow_points_left" />
 
 </RelativeLayout>
