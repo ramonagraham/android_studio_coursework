@@ -9,10 +9,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private QuizModel model = new QuizModel();
+    private QuestionModel currentQuestion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        currentQuestion = model.getQuestion();
+
         TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
-        textQuestion.setText("" + model.getQuestion());
-
-
+        textQuestion.setText(currentQuestion.getQuestion());
     }
 
     @Override
@@ -55,5 +59,40 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void handleTrue(View view) {
+        // if android:text = true and model.response = true
+        if(currentQuestion.getResponse() == true) {
+            Toast.makeText(this,
+                    "You are right!",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this,
+                    "You are incorrect!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        currentQuestion = model.getQuestion();
+
+        TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
+        textQuestion.setText(currentQuestion.getQuestion());
+    }
+
+
+    public void handleFalse(View view) {
+        //if android:test == false and model.response == false
+        if(currentQuestion.getResponse() == false) {
+            Toast.makeText(this,
+                    "You are right!",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this,
+                    "You are incorrect!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        currentQuestion = model.getQuestion();
+
+        TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
+        textQuestion.setText(currentQuestion.getQuestion());
     }
 }

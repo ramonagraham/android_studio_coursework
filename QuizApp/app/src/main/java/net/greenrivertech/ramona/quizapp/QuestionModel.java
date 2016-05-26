@@ -6,14 +6,14 @@ package net.greenrivertech.ramona.quizapp;
 public class QuestionModel {
 
     private String question;
-    private String response;
+    private boolean response;
 
     public QuestionModel() {
         question = "";
-        response = "";
+        response = false;
     }
 
-    public QuestionModel(String question, String response) {
+    public QuestionModel(String question, boolean response) {
         this.question = question;
         this.response = response;
     }
@@ -22,7 +22,7 @@ public class QuestionModel {
         return question;
     }
 
-    public String getResponse() {
+    public boolean getResponse() {
         return response;
     }
 }
