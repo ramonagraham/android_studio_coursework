@@ -18,7 +18,7 @@ public class QuestionModel {
         this.response = response;
     }
 
-    public String getQuestion() {
+    public String getQuestion(int questionNumber) {
         return question;
     }
 

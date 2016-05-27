@@ -7,13 +7,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="net.greenrivertech.ramona.quizapp.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="50dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The Quiz Game!"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:layout_marginTop="0dp"/>
 
     <LinearLayout
@@ -24,8 +25,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewQuestion"
-            android:layout_margin="20dp"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="100sp"
+            android:layout_height="75sp"
+            android:id="@+id/buttonPrevious"
+            android:layout_gravity="bottom|left"
+            android:text="Previous Question"
+            android:src="@drawable/previous_arrow"
+            android:onClick="handlePrevious"/>
+
+        <ImageButton
+            android:layout_width="100sp"
+            android:layout_height="75sp"
+            android:id="@+id/buttonNext"
+            android:layout_gravity="bottom|right"
+            android:text="Next Question"
+            android:src="@drawable/next_arrow"
+            android:onClick="handleNext"/>
+
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -49,6 +77,8 @@
             android:layout_margin="5dp"
             android:text="FALSE"
             android:onClick="handleFalse"/>
-
     </LinearLayout>
+
+
+
 </LinearLayout>

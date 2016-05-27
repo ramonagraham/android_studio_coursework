@@ -26,7 +26,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/arrow_right"
-        android:visibility="visible"
+        android:visibility="gone"
         android:contentDescription="@string/arrow_points_right" />
     <ImageView
         android:layout_width="match_parent"
