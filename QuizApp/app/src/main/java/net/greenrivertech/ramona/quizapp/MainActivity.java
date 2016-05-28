@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     private QuizModel model = new QuizModel();
     private QuestionModel currentQuestion;
-    private Button next;
-    private Button previous;
+    private ImageButton next;
+    private ImageButton previous;
     private int questionNumber = 0;
     final static int minNumberQuestions = 0; // min represents the array's 0 element
     final static int maxNumberQuestions = 3; // max represents the array's last number of elements
@@ -115,25 +116,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleNext (View view) {
-        if (view == next) {
-            questionNumber++;
-            currentQuestion = model.getQuestion(questionNumber);
-            TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
-            textQuestion.setText(currentQuestion.getQuestion(questionNumber));
+        questionNumber++;
+        if (questionNumber > maxNumberQuestions) {
+            questionNumber = minNumberQuestions;
         }
-// else if (view == previous){
-//            questionNumber--;
-//            currentQuestion = model.getQuestion(questionNumber);
-//        }
+        currentQuestion = model.getQuestion(questionNumber);
+        TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
+        textQuestion.setText(currentQuestion.getQuestion(questionNumber));
     }
 
     public void handlePrevious (View view) {
-        if (view == previous) {
-            questionNumber--;
-            currentQuestion = model.getQuestion(questionNumber);
-            TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
-            textQuestion.setText(currentQuestion.getQuestion(questionNumber));
+        questionNumber--;
+        if (questionNumber > maxNumberQuestions ) {
+            questionNumber = minNumberQuestions;
+        } else if (questionNumber == -1) {
+            questionNumber = maxNumberQuestions;
         }
+        currentQuestion = model.getQuestion(questionNumber);
+        TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
+        textQuestion.setText(currentQuestion.getQuestion(questionNumber));
     }
 }
 
