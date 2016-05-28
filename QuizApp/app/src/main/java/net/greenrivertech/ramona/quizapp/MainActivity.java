@@ -88,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
    }
 
 
+    /**
+     * This method determines if answer is correct when select the False Button
+     * Counts the correct times answered when false
+     * @param view
+     */
     public void handleFalse(View view) {
         //if android:test == false and model.response == false
         if(currentQuestion.getResponse() == false) {
@@ -102,6 +107,11 @@ public class MainActivity extends AppCompatActivity {
         }
    }
 
+    /**
+     * This method adds 1 to the questionNumber; if the questionNumber passes the last number,
+     * questionNumber is reset to the 0 array element (minNumberQuestions);
+     * @param view
+     */
     public void handleNext (View view) {
         questionNumber++;
         if (questionNumber > maxNumberQuestions) {
@@ -112,6 +122,11 @@ public class MainActivity extends AppCompatActivity {
         textQuestion.setText(currentQuestion.getQuestion(questionNumber));
     }
 
+    /**
+     * This method subtracts 1 from the questionNumber; if the questionNumber becomes negative 1,
+     * questionNumber is reset to the last array element (maxNumberQuestions);
+     * @param view
+     */
     public void handlePrevious (View view) {
         questionNumber--;
         if (questionNumber > maxNumberQuestions ) {

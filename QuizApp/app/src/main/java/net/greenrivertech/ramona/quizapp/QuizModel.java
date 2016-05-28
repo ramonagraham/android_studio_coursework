@@ -18,6 +18,10 @@ public class QuizModel {
     private String buttonFalse;
 
 
+    /**
+     * This method contains an instantiation of QuestionModel, then provides all of the
+     * questions and answers based off of QuestionModel
+     */
     public QuizModel() {
         question = new QuestionModel[10];
 
@@ -37,22 +41,27 @@ public class QuizModel {
     }
 
 
+    /**
+     * This method returns the question and answer at a specified array element
+     * @param questionNumber
+     * @return specified question and response
+     */
     public QuestionModel getQuestion(int questionNumber) {
         return question[questionNumber];
     }
 
-
-//    public QuestionModel getQuestion() {
-//        Random randomNumber = new Random();
-//        int i = randomNumber.nextInt(4);
-//        return question[i];
-//    }
-
-
+    /**
+     * This method returns the state of the True button
+     * @return buttonTrue
+     */
     public String getButtonTrue() {
         return buttonTrue;
     }
 
+    /**
+     * This method returns the state of the False button
+     * @return buttonFalse
+     */
     public String getButtonFalse() {
         return buttonFalse;
     }
