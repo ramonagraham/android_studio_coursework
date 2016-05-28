@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton previous;
     private int questionNumber = 0;
     final static int minNumberQuestions = 0; // min represents the array's 0 element
-    final static int maxNumberQuestions = 3; // max represents the array's last number of elements
+    final static int maxNumberQuestions = 4; // max represents the array's last number of elements
 
 
     @Override
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
         textQuestion.setText(currentQuestion.getQuestion(questionNumber));
-
     }
 
     @Override
@@ -81,15 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     "You are incorrect!",
                     Toast.LENGTH_SHORT).show();
         }
-        questionNumber++;
-        if (questionNumber > maxNumberQuestions) {
-            questionNumber = minNumberQuestions;
-        }
-        currentQuestion = model.getQuestion(questionNumber);
-
-        TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
-        textQuestion.setText(currentQuestion.getQuestion(questionNumber));
-    }
+   }
 
 
     public void handleFalse(View view) {
@@ -103,17 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     "You are incorrect!",
                     Toast.LENGTH_SHORT).show();
         }
-
-        questionNumber++;
-        if (questionNumber > maxNumberQuestions) {
-            questionNumber = minNumberQuestions;
-        }
-
-        currentQuestion = model.getQuestion(questionNumber);
-
-        TextView textQuestion = (TextView) findViewById(R.id.textViewQuestion);
-        textQuestion.setText(currentQuestion.getQuestion(questionNumber));
-    }
+   }
 
     public void handleNext (View view) {
         questionNumber++;
