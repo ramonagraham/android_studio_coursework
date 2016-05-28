@@ -16,13 +16,12 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-    private QuizModel model = new QuizModel();
-    private QuestionModel currentQuestion;
-    private ImageButton next;
-    private ImageButton previous;
-    private int questionNumber = 0;
+    private QuizModel model = new QuizModel(); // a model for one question and answer
+    private QuestionModel currentQuestion; // provide questions based on an instantiated QuizModel
+    private int questionNumber = 0;  // used to advance to the next or previous question
     final static int minNumberQuestions = 0; // min represents the array's 0 element location
     final static int maxNumberQuestions = 9; // max represents the array's last element location
+    private int numberOfCorrectAnswers = 0;  // track the number of times answered questions
 
 
     @Override
@@ -69,12 +68,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * This method determines if answer is correct when select the True Button
+     * Counts the correct times answered when true
+     * @param view
+     */
     public void handleTrue(View view) {
         // if android:text = true and model.response = true
         if(currentQuestion.getResponse() == true) {
             Toast.makeText(this,
                     "You are right!",
                     Toast.LENGTH_SHORT).show();
+            numberOfCorrectAnswers++;
         } else {
             Toast.makeText(this,
                     "You are incorrect!",
@@ -89,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,
                     "You are right!",
                     Toast.LENGTH_SHORT).show();
+            numberOfCorrectAnswers++;
         } else {
             Toast.makeText(this,
                     "You are incorrect!",
