@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton next;
     private ImageButton previous;
     private int questionNumber = 0;
-    final static int minNumberQuestions = 0; // min represents the array's 0 element
-    final static int maxNumberQuestions = 4; // max represents the array's last number of elements
+    final static int minNumberQuestions = 0; // min represents the array's 0 element location
+    final static int maxNumberQuestions = 9; // max represents the array's last element location
 
 
     @Override
